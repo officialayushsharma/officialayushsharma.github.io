@@ -1,41 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Ayush Sharma</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Sharma | Professional Portfolio</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d1117;
+color:white;
+line-height:1.6;
+}
+
+header{
+padding:80px 20px;
+text-align:center;
+background:linear-gradient(135deg,#0d1117,#161b22);
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+color:#58a6ff;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+background:#161b22;
+padding:25px;
+margin-bottom:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(88,166,255,0.15);
+}
+
+h2{
+color:#58a6ff;
+margin-bottom:15px;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.skill{
+background:#21262d;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#238636;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#161b22;
+margin-top:30px;
+}
+
+@media(max-width:768px){
+header h1{
+font-size:32px;
+}
+}
+</style>
 </head>
+
 <body>
 
+<header>
 <h1>Ayush Sharma</h1>
+<p>ICCC Operator | EMS Operator | Network Monitoring</p>
+</header>
 
-<p>ICCC Operator | EMS Operator</p>
+<div class="container">
 
+<div class="card">
 <h2>About Me</h2>
+<p>
+Currently working at Bilaspur Smart City Project under Technosys Integrated Solutions Pvt. Ltd.
+Experienced in EMS Monitoring, Network Monitoring, CCTV Surveillance, ANPR, RLVD, ATCS and Incident Handling.
+</p>
+</div>
+
+<div class="card">
+<h2>Technical Skills</h2>
+
+<div class="skills">
+<div class="skill">Network Monitoring</div>
+<div class="skill">Cisco Switch Troubleshooting</div>
+<div class="skill">EMS Monitoring</div>
+<div class="skill">ANPR Monitoring</div>
+<div class="skill">RLVD Monitoring</div>
+<div class="skill">ITMS Operations</div>
+<div class="skill">SSH & PuTTY</div>
+<div class="skill">CCTV Surveillance</div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>Professional Experience</h2>
 
 <p>
-Working at Bilaspur Smart City Project under Technosys Integrated Solutions Pvt Ltd.
+<b>ICCC Operator / EMS Operator</b><br>
+Bilaspur Smart City Project<br><br>
+
+• Network Monitoring & Incident Handling<br>
+• ANPR / RLVD Monitoring<br>
+• EMS Dashboard Monitoring<br>
+• CCTV Surveillance Operations<br>
+• Cisco Switch Troubleshooting using SSH & PuTTY<br>
+• Smart City Infrastructure Monitoring
 </p>
 
-<h2>Skills</h2>
+</div>
 
-<ul>
-<li>Network Monitoring</li>
-<li>Cisco Switch Troubleshooting</li>
-<li>EMS Monitoring</li>
-<li>ANPR Monitoring</li>
-<li>RLVD Monitoring</li>
-<li>ITMS Operations</li>
-</ul>
-
-<h2>Experience</h2>
-
-<p>
-ICCC Operator / EMS Operator
-Bilaspur Smart City Project
-</p>
-
+<div class="card">
 <h2>Contact</h2>
 
-<p>Email : yourmail@gmail.com</p>
+<p>Email: ayushsharma@example.com</p>
+
+<a href="https://github.com/officialayushsharma" class="btn">
+Visit GitHub
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Ayush Sharma | Professional Portfolio
+</footer>
 
 </body>
 </html>
