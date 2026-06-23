@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ayush Sharma | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -16,218 +18,492 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
+:root{
+--bg:#0b1220;
+--card:#111827;
+--card2:#1f2937;
+--text:#f3f4f6;
+--sub:#9ca3af;
+--blue:#3b82f6;
+--border:rgba(59,130,246,.15);
+}
+
+.light-mode{
+--bg:#f8fafc;
+--card:#ffffff;
+--card2:#f1f5f9;
+--text:#0f172a;
+--sub:#475569;
+--blue:#2563eb;
+--border:rgba(37,99,235,.15);
+}
+
 body{
-background:linear-gradient(-45deg,#000000,#0f172a,#312e81,#4c1d95);
-background-size:400% 400%;
-animation:gradient 12s ease infinite;
-color:white;
+background:var(--bg);
+color:var(--text);
+transition:.3s;
 overflow-x:hidden;
-transition:.4s;
 }
 
-body.light{
-background:#f5f5f5;
-color:#111;
-}
-
-@keyframes gradient{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.toggle{
+body::before{
+content:'';
 position:fixed;
-top:20px;
-right:20px;
-z-index:999;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
-padding:12px 18px;
-border-radius:30px;
-cursor:pointer;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
-
-.title{
-text-align:center;
-margin-bottom:40px;
-}
-
-.title h1{
-font-size:3rem;
-color:#60a5fa;
-text-shadow:0 0 20px #60a5fa;
-}
-
-.title p{
-margin-top:10px;
-opacity:.9;
-}
-
-.card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.1);
-padding:30px;
-border-radius:20px;
-margin-bottom:25px;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px rgba(96,165,250,.3);
-}
-
-h2{
-margin-bottom:20px;
-color:#60a5fa;
-}
-
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.skill{
-background:rgba(255,255,255,.08);
-padding:15px;
-border-radius:12px;
-text-align:center;
-}
-
-.buttons{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-margin-top:20px;
-}
-
-.btn{
-padding:12px 20px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-background:#2563eb;
-color:white;
-}
-
-.btn:hover{
-opacity:.85;
-}
-
-footer{
-text-align:center;
-padding:30px;
-font-size:.9rem;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(59,130,246,.08), transparent 25%),
+radial-gradient(circle at 80% 80%, rgba(59,130,246,.06), transparent 25%);
+z-index:-2;
 }
 
 .particle{
 position:fixed;
 width:4px;
 height:4px;
-background:white;
 border-radius:50%;
-opacity:.4;
-animation:float 15s linear infinite;
+background:rgba(255,255,255,.15);
+animation:float 18s linear infinite;
+z-index:-1;
 }
 
 @keyframes float{
-0%{
+from{
 transform:translateY(100vh);
 }
-100%{
+to{
 transform:translateY(-100px);
 }
 }
+
+.theme-toggle{
+position:fixed;
+right:20px;
+top:20px;
+width:50px;
+height:50px;
+border-radius:50%;
+border:none;
+cursor:pointer;
+background:var(--card);
+color:var(--text);
+font-size:18px;
+z-index:999;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.page-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.page-title h1{
+font-size:42px;
+font-weight:700;
+}
+
+.page-title p{
+margin-top:10px;
+color:var(--sub);
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+padding:30px;
+border-radius:18px;
+margin-bottom:25px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-3px);
+}
+
+.card h2{
+color:var(--blue);
+margin-bottom:20px;
+font-size:24px;
+}
+
+.card p{
+line-height:1.8;
+color:var(--text);
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.skill{
+background:var(--card2);
+padding:14px;
+border-radius:10px;
+text-align:center;
+font-size:14px;
+}
+
+.button-group{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:20px;
+}
+
+.btn{
+background:var(--blue);
+color:white;
+padding:12px 18px;
+text-decoration:none;
+border-radius:10px;
+font-size:14px;
+font-weight:600;
+display:inline-block;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+.timeline{
+border-left:3px solid var(--blue);
+padding-left:20px;
+}
+
+.timeline h3{
+margin-bottom:8px;
+}
+
+.timeline p{
+margin-bottom:12px;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:var(--sub);
+}
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.page-title h1{
+font-size:30px;
+}
+
+.card{
+padding:20px;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
-<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
 <div class="particle" style="left:10%;animation-delay:0s;"></div>
-<div class="particle" style="left:25%;animation-delay:2s;"></div>
-<div class="particle" style="left:45%;animation-delay:4s;"></div>
-<div class="particle" style="left:65%;animation-delay:6s;"></div>
-<div class="particle" style="left:85%;animation-delay:8s;"></div>
+<div class="particle" style="left:25%;animation-delay:3s;"></div>
+<div class="particle" style="left:45%;animation-delay:6s;"></div>
+<div class="particle" style="left:70%;animation-delay:9s;"></div>
+<div class="particle" style="left:90%;animation-delay:12s;"></div>
 
 <div class="container">
 
-<div class="title">
+<div class="page-title">
 <h1>Ayush Sharma | Portfolio</h1>
 <p>ICCC & EMS Operator | Technosys Integrated Solutions Pvt. Ltd.</p>
 </div>
 
-<div class="card">
+<div class="card reveal">
 <h2>About Me</h2>
+
 <p>
 Hi, I'm Ayush Sharma, a B.Tech Computer Science & Engineering graduate from MATS University, Raipur. I completed my graduation in 2023 with a 7.54 CGPA. I am passionate about technology, networking, and continuous learning, with a strong interest in IT infrastructure, networking, and smart city solutions.
 </p>
+
 </div>
 
-<div class="card">
+<div class="card reveal">
+
 <h2>Resume</h2>
-<div class="buttons">
-<a class="btn" href="Ayush_Sharma_CV.pdf" download>📄 Download Resume</a>
-</div>
+
+<div class="button-group">
+
+<a href="Ayush_Sharma_CV.pdf"
+download
+class="btn">
+📄 Download Resume
+</a>
+
 </div>
 
-<div class="card">
+</div>
+
+<div class="card reveal">
+
 <h2>Contact</h2>
-<div class="buttons">
-<a class="btn" href="tel:+918319482060">📞 Call</a>
-<a class="btn" href="https://wa.me/918319482060">💬 WhatsApp</a>
-<a class="btn" href="mailto:aayushkorba@gmail.com">📧 Gmail</a>
-<a class="btn" href="https://www.linkedin.com/in/ayush-sharma-853421170" target="_blank">💼 Connect on LinkedIn</a>
-</div>
+
+<p>📧 Email: aayushkorba@gmail.com</p>
+<p>📞 Phone: +91 8319482060</p>
+<p>📞 Alternate: +91 7777870003</p>
+<p>💼 LinkedIn: Ayush Sharma</p>
+
+<div class="button-group">
+
+<a href="tel:+918319482060" class="btn">
+📞 Call
+</a>
+
+<a href="https://wa.me/918319482060" class="btn">
+💬 WhatsApp
+</a>
+
+<a href="mailto:aayushkorba@gmail.com" class="btn">
+📧 Gmail
+</a>
+
+<a href="https://www.linkedin.com/in/ayush-sharma-853421170"
+target="_blank"
+class="btn">
+💼 Connect on LinkedIn
+</a>
+
 </div>
 
-<div class="card">
+</div>
+
+<div class="card reveal">
+
 <h2>Languages</h2>
+
 <p>Hindi (Native)</p>
 <p>English (Professional)</p>
 <p>Chhattisgarhi (Native)</p>
+
 </div>
 
-<div class="card">
+<div class="card reveal">
+
+<h2>Work Experience</h2>
+
+<div class="timeline">
+
+<h3>ICCC & EMS Operator</h3>
+
+<p>
+Technosys Integrated Solutions Pvt. Ltd.
+Bilaspur Smart City Project
+Aug 2025 – Present
+</p>
+
+<p>
+Monitoring and managing critical Smart City IT Infrastructure through Enterprise Monitoring Systems (EMS). Ensuring high availability and operational health of network devices, surveillance systems, and integrated smart city applications.
+</p>
+
+<p>
+Performing real-time network monitoring, fault identification, root cause analysis, and first-level troubleshooting for enterprise network environments.
+</p>
+
+<p>
+Monitoring Cisco Switches, network uplinks, bandwidth utilization, port status, and device health through EMS and SSH-based tools.
+</p>
+
+<p>
+Managing and tracking incidents as per defined Service Level Agreements (SLAs) to ensure timely resolution and minimal service disruption.
+</p>
+
+<p>
+Coordinating with field engineers, vendors, and technical teams for incident escalation, resolution, and service restoration.
+</p>
+
+<p>
+Monitoring ANPR, RLVD, PTZ, VMS, and Traffic Management Systems to ensure uninterrupted city operations.
+</p>
+
+<p>
+Generating operational reports, incident reports, downtime analysis, and SLA compliance reports for management review.
+</p>
+
+<p>
+Supporting preventive maintenance activities, device health checks, and network performance optimization.
+</p>
+
+<p>
+Maintaining service continuity by proactively identifying potential infrastructure issues before business impact occurs.
+</p>
+
+<p>
+<b>Key Technologies</b><br><br>
+
+EMS (Motadata) |
+Cisco Switching |
+SSH |
+PuTTY |
+Network Monitoring |
+SLA Management |
+Incident Management |
+NMS |
+CCTV Surveillance |
+ANPR |
+RLVD |
+ATCS |
+ITMS |
+VMS
+
+</p>
+
+</div>
+
+</div><div class="card reveal">
+
+<h2>Education</h2>
+
+<h3>
+Bachelor of Technology (Computer Science & Engineering)
+</h3>
+
+<p>
+MATS University, Raipur
+2019-2023 | With CGPA: 7.54
+</p>
+
+</div>
+
+<div class="card reveal">
+
+<h2>Major Project</h2>
+
+<h3>Third Eye for Blind Person</h3>
+
+<p>
+Developed an assistive smart system designed to help visually impaired individuals navigate safely. The project utilized sensors and obstacle detection mechanisms to identify nearby objects and provide real-time alerts through audio and vibration feedback, improving mobility and independence for users.
+</p>
+
+</div>
+
+<div class="card reveal">
+
+<h2>Minor Project</h2>
+
+<h3>College Hostel Booking Management System</h3>
+
+<p>
+Designed and developed a web-based hostel booking platform that enables students to view hostel availability, submit room booking requests, and manage accommodation records online. The system improves efficiency by reducing manual paperwork and simplifying hostel allocation processes.
+</p>
+
+</div>
+
+<div class="card reveal">
+
 <h2>Technical Skills</h2>
-<div class="skills">
+
+<div class="skills-grid">
+
 <div class="skill">Network Monitoring</div>
+
 <div class="skill">EMS Monitoring (Motadata)</div>
+
 <div class="skill">NMS Monitoring</div>
+
 <div class="skill">Cisco Switching</div>
+
 <div class="skill">SSH & PuTTY</div>
+
 <div class="skill">CCTV Surveillance</div>
+
 <div class="skill">ANPR Monitoring</div>
+
 <div class="skill">RLVD Monitoring</div>
+
 <div class="skill">ATCS Monitoring</div>
+
 <div class="skill">ITMS Operations</div>
+
 <div class="skill">Incident Management</div>
+
 <div class="skill">Technical Support</div>
+
 <div class="skill">Windows Administration</div>
+
 <div class="skill">SLA Report Preparation</div>
-</div>
+
 </div>
 
-<footer>
+</div>
+
+<div class="card reveal">
+
+<h2>Certifications</h2>
+
+<p>
+Cisco Networking Academy (NetAcad)
+</p>
+
+<br>
+
+<p>
+Java Certification Course – SkillUp (Simplilearn) | April 2022
+</p>
+
+</div>
+
+<div class="footer">
+
 © 2026 Ayush Sharma. All Rights Reserved.
-</footer>
+
+</div>
 
 </div>
 
 <script>
+
 function toggleTheme(){
-document.body.classList.toggle('light');
+
+document.body.classList.toggle("light-mode");
+
 }
+
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(section=>{
+
+const top = section.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+section.classList.add("active");
+
+}
+
+});
+
+});
+
+window.dispatchEvent(new Event("scroll"));
+
 </script>
 
 </body>
