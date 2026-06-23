@@ -3,56 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayush Sharma | Professional Portfolio</title>
+<title>Ayush Sharma | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0d1117;
+background:linear-gradient(-45deg,#000000,#0f172a,#312e81,#4c1d95);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
+transition:.4s;
 }
 
-header{
-padding:80px 20px;
-text-align:center;
-background:linear-gradient(135deg,#0d1117,#161b22);
+body.light{
+background:#f5f5f5;
+color:#111;
 }
 
-header h1{
-font-size:42px;
-margin-bottom:10px;
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-header p{
-font-size:18px;
-color:#58a6ff;
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+padding:12px 18px;
+border-radius:30px;
+cursor:pointer;
 }
 
 .container{
-width:90%;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
-padding:40px 0;
+padding:80px 20px;
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.title h1{
+font-size:3rem;
+color:#60a5fa;
+text-shadow:0 0 20px #60a5fa;
+}
+
+.title p{
+margin-top:10px;
+opacity:.9;
 }
 
 .card{
-background:#161b22;
-padding:25px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+padding:30px;
+border-radius:20px;
 margin-bottom:25px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(88,166,255,0.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(96,165,250,.3);
 }
 
 h2{
-color:#58a6ff;
-margin-bottom:15px;
+margin-bottom:20px;
+color:#60a5fa;
 }
 
 .skills{
@@ -62,33 +97,54 @@ gap:15px;
 }
 
 .skill{
-background:#21262d;
+background:rgba(255,255,255,.08);
 padding:15px;
-border-radius:10px;
+border-radius:12px;
 text-align:center;
 }
 
-.btn{
-display:inline-block;
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
 margin-top:20px;
-padding:12px 25px;
-background:#238636;
-color:white;
+}
+
+.btn{
+padding:12px 20px;
+border-radius:12px;
 text-decoration:none;
-border-radius:8px;
-font-weight:bold;
+font-weight:600;
+background:#2563eb;
+color:white;
+}
+
+.btn:hover{
+opacity:.85;
 }
 
 footer{
 text-align:center;
-padding:20px;
-background:#161b22;
-margin-top:30px;
+padding:30px;
+font-size:.9rem;
 }
 
-@media(max-width:768px){
-header h1{
-font-size:32px;
+.particle{
+position:fixed;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:.4;
+animation:float 15s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100px);
 }
 }
 </style>
@@ -96,70 +152,83 @@ font-size:32px;
 
 <body>
 
-<header>
-<h1>Ayush Sharma</h1>
-<p>ICCC Operator | EMS Operator | Network Monitoring</p>
-</header>
+<div class="toggle" onclick="toggleTheme()">🌙 / ☀️</div>
+
+<div class="particle" style="left:10%;animation-delay:0s;"></div>
+<div class="particle" style="left:25%;animation-delay:2s;"></div>
+<div class="particle" style="left:45%;animation-delay:4s;"></div>
+<div class="particle" style="left:65%;animation-delay:6s;"></div>
+<div class="particle" style="left:85%;animation-delay:8s;"></div>
 
 <div class="container">
+
+<div class="title">
+<h1>Ayush Sharma | Portfolio</h1>
+<p>ICCC & EMS Operator | Technosys Integrated Solutions Pvt. Ltd.</p>
+</div>
 
 <div class="card">
 <h2>About Me</h2>
 <p>
-Currently working at Bilaspur Smart City Project under Technosys Integrated Solutions Pvt. Ltd.
-Experienced in EMS Monitoring, Network Monitoring, CCTV Surveillance, ANPR, RLVD, ATCS and Incident Handling.
+Hi, I'm Ayush Sharma, a B.Tech Computer Science & Engineering graduate from MATS University, Raipur. I completed my graduation in 2023 with a 7.54 CGPA. I am passionate about technology, networking, and continuous learning, with a strong interest in IT infrastructure, networking, and smart city solutions.
 </p>
 </div>
 
 <div class="card">
-<h2>Technical Skills</h2>
-
-<div class="skills">
-<div class="skill">Network Monitoring</div>
-<div class="skill">Cisco Switch Troubleshooting</div>
-<div class="skill">EMS Monitoring</div>
-<div class="skill">ANPR Monitoring</div>
-<div class="skill">RLVD Monitoring</div>
-<div class="skill">ITMS Operations</div>
-<div class="skill">SSH & PuTTY</div>
-<div class="skill">CCTV Surveillance</div>
+<h2>Resume</h2>
+<div class="buttons">
+<a class="btn" href="Ayush_Sharma_CV.pdf" download>📄 Download Resume</a>
 </div>
-
-</div>
-
-<div class="card">
-<h2>Professional Experience</h2>
-
-<p>
-<b>ICCC Operator / EMS Operator</b><br>
-Bilaspur Smart City Project<br><br>
-
-• Network Monitoring & Incident Handling<br>
-• ANPR / RLVD Monitoring<br>
-• EMS Dashboard Monitoring<br>
-• CCTV Surveillance Operations<br>
-• Cisco Switch Troubleshooting using SSH & PuTTY<br>
-• Smart City Infrastructure Monitoring
-</p>
-
 </div>
 
 <div class="card">
 <h2>Contact</h2>
-
-<p>Email: ayushsharma@example.com</p>
-
-<a href="https://github.com/officialayushsharma" class="btn">
-Visit GitHub
-</a>
-
+<div class="buttons">
+<a class="btn" href="tel:+918319482060">📞 Call</a>
+<a class="btn" href="https://wa.me/918319482060">💬 WhatsApp</a>
+<a class="btn" href="mailto:aayushkorba@gmail.com">📧 Gmail</a>
+<a class="btn" href="https://www.linkedin.com/in/ayush-sharma-853421170" target="_blank">💼 Connect on LinkedIn</a>
+</div>
 </div>
 
+<div class="card">
+<h2>Languages</h2>
+<p>Hindi (Native)</p>
+<p>English (Professional)</p>
+<p>Chhattisgarhi (Native)</p>
+</div>
+
+<div class="card">
+<h2>Technical Skills</h2>
+<div class="skills">
+<div class="skill">Network Monitoring</div>
+<div class="skill">EMS Monitoring (Motadata)</div>
+<div class="skill">NMS Monitoring</div>
+<div class="skill">Cisco Switching</div>
+<div class="skill">SSH & PuTTY</div>
+<div class="skill">CCTV Surveillance</div>
+<div class="skill">ANPR Monitoring</div>
+<div class="skill">RLVD Monitoring</div>
+<div class="skill">ATCS Monitoring</div>
+<div class="skill">ITMS Operations</div>
+<div class="skill">Incident Management</div>
+<div class="skill">Technical Support</div>
+<div class="skill">Windows Administration</div>
+<div class="skill">SLA Report Preparation</div>
+</div>
 </div>
 
 <footer>
-© 2026 Ayush Sharma | Professional Portfolio
+© 2026 Ayush Sharma. All Rights Reserved.
 </footer>
+
+</div>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle('light');
+}
+</script>
 
 </body>
 </html>
