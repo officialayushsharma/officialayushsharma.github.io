@@ -23,6 +23,13 @@
     .hero-inner{width:min(1400px,100%);display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.eyebrow{font:11px "DM Mono";letter-spacing:.18em;color:#8e8e96;text-transform:uppercase}.hero h1{font-size:clamp(58px,9.5vw,145px);line-height:.84;letter-spacing:-.075em;margin:20px 0 28px;max-width:900px}.hero h1 .dim{color:#686870}
     .rolewrap{height:32px;overflow:hidden;margin-bottom:34px}.role{font-size:17px;letter-spacing:.03em;color:#ddd;transition:transform .45s,opacity .45s}.role.out{transform:translateY(-30px);opacity:0}.role.in{transform:translateY(30px);opacity:0}
     .hero-meta{display:flex;gap:24px;align-items:center;color:#8f8f97;font-size:12px}.status{color:var(--accent)}.scrollcue{position:absolute;bottom:30px;left:5vw;font:10px "DM Mono";letter-spacing:.14em;color:#777}
+    .portrait-orbit{position:absolute;left:50%;top:50%;width:315px;height:315px;border:1px solid rgba(106,232,255,.18);border-radius:50%;transform:translate(-50%,-50%) rotateX(66deg) rotateZ(-12deg);pointer-events:none;z-index:1;animation:portraitOrbit 15s linear infinite}
+    .portrait-orbit:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#6ae8ff;box-shadow:0 0 12px #6ae8ff;left:50%;top:-3px}
+    .orbit-two{width:270px;height:270px;border-color:rgba(185,255,106,.15);transform:translate(-50%,-50%) rotateX(66deg) rotateZ(58deg);animation-duration:20s;animation-direction:reverse}
+    .orbit-two:after{background:#b9ff6a;box-shadow:0 0 12px #b9ff6a;top:50%;left:-3px}
+    .orbit-three{width:345px;height:345px;border-color:rgba(255,255,255,.08);transform:translate(-50%,-50%) rotateX(72deg) rotateZ(112deg);animation-duration:25s}
+    .orbit-three:after{background:#fff;box-shadow:0 0 10px #fff;top:50%;left:auto;right:-3px}
+    @keyframes portraitOrbit{to{transform:translate(-50%,-50%) rotateX(66deg) rotateZ(348deg)}}
     .portrait-stage{height:min(680px,72vh);min-height:430px;display:grid;place-items:center;perspective:1400px;position:relative}
     .portrait{width:210px;height:270px;min-width:210px;max-width:210px;min-height:270px;max-height:270px;position:relative;transform-style:preserve-3d;filter:drop-shadow(24px 28px 38px rgba(0,0,0,.72));transition:transform .12s ease-out;will-change:transform;display:grid;place-items:center}
     .portrait-3d{position:relative;width:210px;height:270px;max-width:210px;max-height:270px;transform-style:preserve-3d;overflow:visible}
@@ -39,35 +46,9 @@
     .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.terminal{border:1px solid var(--line);background:#080809;padding:26px;min-height:370px}.terminal-top{display:flex;gap:7px;margin-bottom:45px}.dot{width:7px;height:7px;border-radius:50%;background:#444}.terminal pre{font:14px "DM Mono";line-height:1.9;color:#aaa;white-space:pre-wrap}.terminal .hi{color:var(--accent)}form{display:grid;gap:13px}label{font:9px "DM Mono";color:#777;letter-spacing:.12em}input,textarea{width:100%;background:#09090a;border:1px solid var(--line);color:#fff;padding:15px;outline:none;border-radius:0}input:focus,textarea:focus{border-color:#666}textarea{min-height:170px;resize:vertical}.submit{border:1px solid #fff;background:#fff;color:#050505;padding:14px 18px;cursor:pointer;font-weight:700}.formnote{font:9px "DM Mono";color:#666;line-height:1.5}
     .footer{padding:80px 5vw 35px;border-top:1px solid var(--line)}.bigname{font-size:clamp(75px,18vw,290px);font-weight:800;letter-spacing:-.09em;line-height:.75;white-space:nowrap;transform:translateX(-.03em)}.footer-row{display:flex;justify-content:space-between;margin-top:45px;color:#777;font:10px "DM Mono"}.links{display:flex;gap:18px}.links a:hover{color:#fff}
     .reveal{opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}
-    @media(max-width:900px){
-      .navlinks{display:none}
-      .hero-inner,.profile-grid,.contact{grid-template-columns:1fr}
-      .hero{padding-top:120px}
-      .portrait-stage{order:-1;height:52vh;min-height:360px}
-      .portrait{width:135px;height:175px;min-width:135px;max-width:135px;min-height:175px;max-height:175px}
-      .portrait-3d{width:135px;height:175px;max-width:135px;max-height:175px}
-      .portrait-3d canvas{width:135px!important;height:175px!important;max-width:135px!important;max-height:175px!important}
-      .section{padding:100px 6vw}
-      .root,.projects,.experience{grid-template-columns:1fr 1fr}
-      .section-head{display:block}
-      .desc{margin-top:20px}
-      .gallery-card{height:310px}
-    }
-    @media(max-width:600px){
-      .root,.projects,.experience{grid-template-columns:1fr}
-      .hero h1{font-size:18vw}
-      .hero-meta{flex-wrap:wrap}
-      .facts{grid-template-columns:1fr 1fr}
-      .hero{padding-top:105px}
-      .portrait-stage{height:390px;min-height:390px}
-      .portrait{width:120px;height:155px;min-width:120px;max-width:120px;min-height:155px;max-height:155px}
-      .portrait-3d{width:120px;height:155px;max-width:120px;max-height:155px}
-      .portrait-3d canvas{width:120px!important;height:155px!important;max-width:120px!important;max-height:155px!important}
-      .portrait-tag{font-size:9px;padding:7px 9px}
-      .footer-row{display:block}
-      .links{margin-top:15px}
-      .bigname{font-size:26vw}
-    }
+    @media(max-width:600px){.portrait-stage{width:100%!important;height:390px!important;min-height:390px!important;display:grid!important;place-items:center!important;overflow:visible!important}.portrait{width:120px!important;height:155px!important;min-width:120px!important;max-width:120px!important;min-height:155px!important;max-height:155px!important}.portrait-3d{width:120px!important;height:155px!important;max-width:120px!important;max-height:155px!important}.portrait-3d canvas{width:120px!important;height:155px!important;max-width:120px!important;max-height:155px!important}.portrait-orbit{width:190px;height:190px}.orbit-two{width:165px;height:165px}.orbit-three{width:210px;height:210px}}
+@media(max-width:900px){.portrait{width:95px !important;height:120px !important;max-width:95px;max-height:120px}.navlinks{display:none}.hero-inner,.profile-grid,.contact{grid-template-columns:1fr}.hero{padding-top:120px}.portrait-stage{order:-1;height:52vh;min-height:360px}.portrait{width:95px;height:120px;aspect-ratio:auto}.section{padding:100px 6vw}.root,.projects,.experience{grid-template-columns:1fr 1fr}.section-head{display:block}.desc{margin-top:20px}.gallery-card{height:310px}}
+    .root,.projects,.experience{grid-template-columns:1fr}.hero h1{font-size:18vw}.hero-meta{flex-wrap:wrap}.facts{grid-template-columns:1fr 1fr}.portrait-stage{height:50vh;min-height:330px}.footer-row{display:block}.links{margin-top:15px}.bigname{font-size:26vw}}
   </style>
 </head>
 <body>
@@ -92,6 +73,9 @@
       <div class="hero-meta"><span class="status">● SYSTEM ONLINE</span><span class="mono">BILASPUR, CG</span><span class="mono">B.TECH CSE</span></div>
     </div>
     <div class="portrait-stage" id="portraitStage">
+      <div class="portrait-orbit orbit-one"></div>
+      <div class="portrait-orbit orbit-two"></div>
+      <div class="portrait-orbit orbit-three"></div>
       <div class="portrait" id="portrait"><div class="portrait-3d" id="portrait3d"><div class="portrait-depth"></div><canvas id="portraitCanvas" aria-label="Interactive 3D portrait of Ayush Sharma"></canvas></div></div>
       <div class="portrait-tag">OPEN TO OPPORTUNITIES</div>
     </div>
@@ -214,11 +198,11 @@ $ echo "Let's build something exceptional."
     scene.add(group);
 
     const loader=new THREE.TextureLoader();
-    loader.load("hero-cutout.png?v=5", tex=>{
+    loader.load("hero-cutout.png?v=4", tex=>{
       tex.colorSpace=THREE.SRGBColorSpace;
       tex.anisotropy=renderer.capabilities.getMaxAnisotropy();
 
-      const geo=new THREE.PlaneGeometry(1.35,1.516,128,128);
+      const geo=new THREE.PlaneGeometry(1.35,1.516,96,96);
       const pos=geo.attributes.position;
       const uv=geo.attributes.uv;
 
@@ -227,7 +211,7 @@ $ echo "Let's build something exceptional."
         const u=uv.getX(i)-0.5, v=uv.getY(i)-0.5;
         const x=u*2, y=v*2;
         const face=Math.max(0,1-(x*x*1.05+y*y*1.35));
-        pos.setZ(i,0.30*face*face + 0.035*Math.sin(u*Math.PI*2)*(1-Math.abs(v)*0.65));
+        pos.setZ(i,0.17*face*face);
       }
       geo.computeVertexNormals();
 
@@ -243,15 +227,15 @@ $ echo "Let's build something exceptional."
       const key=new THREE.DirectionalLight(0xbff7ff,2.0); key.position.set(2,2,4); scene.add(key);
       const rim=new THREE.PointLight(0x9dffb5,1.2,8); rim.position.set(-2,0,3); scene.add(rim);
 
-      let tx=0,ty=0,rx=0,ry=0,clock=0;
+      let tx=0,ty=0,rx=0,ry=0;
       function pointer(e){
         const r=stage.getBoundingClientRect();
         tx=((e.clientX-r.left)/r.width-.5);
         ty=((e.clientY-r.top)/r.height-.5);
       }
-      stage.addEventListener("pointermove",pointer,{passive:true});
-      stage.addEventListener("pointerleave",()=>{tx=0;ty=0},{passive:true});
-      stage.addEventListener("pointerdown",pointer,{passive:true});
+      stage.addEventListener("pointermove",pointer);
+      stage.addEventListener("pointerleave",()=>{tx=0;ty=0});
+      stage.addEventListener("pointerdown",pointer);
 
       function resize(){
         const r=canvas.getBoundingClientRect();
@@ -266,22 +250,11 @@ $ echo "Let's build something exceptional."
 
       function animate(){
         requestAnimationFrame(animate);
-        clock += 0.012;
-
-        // Smooth head-like idle motion plus stronger pointer-controlled perspective.
-        const idleY = Math.sin(clock*0.72)*0.035;
-        const idleX = Math.sin(clock*0.46)*0.018;
-        rx += (ty*0.28 + idleX-rx)*0.075;
-        ry += (-tx*0.42 + idleY-ry)*0.075;
-
+        rx += (ty*0.20-rx)*0.075;
+        ry += (-tx*0.28-ry)*0.075;
         group.rotation.x=rx;
         group.rotation.y=ry;
-
-        // Tiny depth breathing makes the cutout feel less like a flat card.
-        group.position.z=0.02 + Math.sin(clock*0.9)*0.012;
-        group.position.x += ((-tx*0.018)-group.position.x)*0.06;
-        group.position.y += ((-ty*0.012)-group.position.y)*0.06;
-
+        group.position.z=0.02;
         renderer.render(scene,camera);
       }
       animate();
